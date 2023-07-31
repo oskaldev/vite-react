@@ -43,9 +43,6 @@ devDependencies:
   eslint-plugin-react-refresh:
     specifier: ^0.4.3
     version: 0.4.3(eslint@8.46.0)
-  postcss:
-    specifier: ^8.4.27
-    version: 8.4.27
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
