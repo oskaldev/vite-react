@@ -15,4 +15,3 @@ export const data = [
     isCompleted: false,
   }
 ]
-// console.log(data)
