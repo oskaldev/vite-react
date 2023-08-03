@@ -1,22 +1,19 @@
 import React, { createContext, useState } from 'react';
 import { data } from '../data/todo.data';
+import { changeTodoStatus } from '../helpers/todoHelpers';
 export const TodoContext = createContext();
 
 const TodoProdiver = ({ children }) => {
   const [todos, setTodos] = useState(data);
-
   const removeTodo = id => {
     setTodos([...todos].filter(t => t.id != id));
   };
-  const changeTodo = id => {
-    const copyTodo = [...todos];
-    const currentTodo = copyTodo.find(t => t.id === id);
-    currentTodo.isCompleted = !currentTodo.isCompleted;
-    setTodos(copyTodo);
+  const handleChangeTodo = id => {
+    const updatedTodos = changeTodoStatus(todos, id);
+    setTodos(updatedTodos);
   };
-
   return (
-    <TodoContext.Provider value={{ todos, setTodos, removeTodo, changeTodo }}>
+    <TodoContext.Provider value={{ todos, setTodos, removeTodo, handleChangeTodo }}>
       {children}
     </TodoContext.Provider>
   );

@@ -1,13 +1,15 @@
 import React from 'react';
 import { BsTrash } from 'react-icons/bs';
 import Check from './Check';
+import { useCallback } from 'react';
 const TodoItem = ({ todo, handleRemoveTodo, handleChangeTodo }) => {
-  const handleRemoveClick = () => {
+  const handleRemoveClick = useCallback(() => {
     handleRemoveTodo(todo.id);
-  };
-  const handleChangeClick = () => {
+  }, [handleRemoveTodo, todo.id]);
+  const handleChangeClick = useCallback(() => {
     handleChangeTodo(todo.id);
-  };
+  }, [handleChangeTodo, todo.id]);
+
   return (
     <div className='flex items-center justify-between bg-zinc-800 rounded-2xl mb-4 p-5 w-full'>
       <button className='flex items-center' onClick={handleChangeClick}>
