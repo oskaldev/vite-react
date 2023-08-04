@@ -12,8 +12,11 @@ const TodoProdiver = ({ children }) => {
     const updatedTodos = changeTodoStatus(todos, id);
     setTodos(updatedTodos);
   };
+  const addTodo = newTodo => {
+    setTodos([...todos, newTodo]);
+  };
   return (
-    <TodoContext.Provider value={{ todos, setTodos, removeTodo, handleChangeTodo }}>
+    <TodoContext.Provider value={{ todos, setTodos, removeTodo, handleChangeTodo, addTodo }}>
       {children}
     </TodoContext.Provider>
   );
