@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
-import { data } from '../data/todo.data';
-import { changeTodoStatus } from '../helpers/todoHelpers';
+import { data } from 'data/todo.data';
+import { changeTodoStatus } from 'helpers/todoHelpers';
 export const TodoContext = createContext();
 
 const TodoProdiver = ({ children }) => {

@@ -1,5 +1,5 @@
+import useTask from 'hooks/useTask';
 import React from 'react';
-import useTask from '../../../../hooks/useTask';
 
 const CreateTask = ({ addTodo }) => {
   const { newTask, handleInputChange, handleKeyPress } = useTask(addTodo);

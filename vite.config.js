@@ -9,5 +9,15 @@ export default defineConfig({
     postcss: {
       plugins: [ tailwindcss ],
     },
-  }
+  },
+  resolve: {
+    alias: {
+      'components': '/src/components',
+      'data': '/src/data',
+      'helpers': '/src/helpers',
+      'hooks': '/src/hooks',
+      'providers': '/src/providers',
+    }
+  },
+
 })
